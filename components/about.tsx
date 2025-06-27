@@ -61,7 +61,7 @@ export default function About() {
               {/* Profile Image */}
               <div className="relative w-48 h-48 mx-auto mb-6">
                 <Image
-                  src="/images/yitages.png"
+                  src="/images/yttt.jpg"
                   alt="Yitages Desta"
                   fill
                   className="object-cover rounded-2xl"
