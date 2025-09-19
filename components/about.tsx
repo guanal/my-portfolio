@@ -32,7 +32,6 @@ export default function About() {
   return (
     <section id="about" className="py-20 px-4 bg-gradient-to-b from-background to-primary/5">
       <div className="container mx-auto max-w-6xl">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -49,7 +48,6 @@ export default function About() {
         </motion.div>
 
         <div className="grid lg:grid-cols-3 gap-12 mb-16">
-          {/* Profile Section */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -58,22 +56,18 @@ export default function About() {
             className="lg:col-span-1"
           >
             <div className="bg-card/50 backdrop-blur-sm border rounded-2xl p-8 shadow-lg">
-              {/* Profile Image */}
               <div className="relative w-48 h-48 mx-auto mb-6">
                 <Image
-                  src="/images/yttt.jpg"
+                  src="/images/yite.jpg"
                   alt="Yitages Desta"
                   fill
                   className="object-cover rounded-2xl"
                   priority
                 />
               </div>
-
-              {/* Profile Info */}
               <div className="text-center space-y-4">
                 <h3 className="text-2xl font-semibold">Yitages Desta</h3>
                 <p className="text-primary font-medium">Full-Stack Developer</p>
-
                 <div className="space-y-2 text-sm text-muted-foreground">
                   <div className="flex items-center justify-center gap-2">
                     <MapPin className="w-4 h-4" />
@@ -88,8 +82,6 @@ export default function About() {
                     <span>Available for opportunities</span>
                   </div>
                 </div>
-
-                {/* Quick Stats */}
                 <div className="grid grid-cols-2 gap-4 pt-6">
                   <div className="text-center p-4 bg-primary/10 rounded-lg">
                     <div className="text-2xl font-bold text-primary">2+</div>
@@ -103,8 +95,6 @@ export default function About() {
               </div>
             </div>
           </motion.div>
-
-          {/* Content Section */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -128,8 +118,6 @@ export default function About() {
                 approach and problem-solving skills.
               </p>
             </div>
-
-            {/* Highlights */}
             <div className="grid md:grid-cols-2 gap-6 pt-6">
               <div className="space-y-3">
                 <h4 className="font-semibold text-primary">What I Do</h4>
@@ -152,8 +140,6 @@ export default function About() {
             </div>
           </motion.div>
         </div>
-
-        {/* Skills Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -167,7 +153,6 @@ export default function About() {
             </h3>
             <p className="text-muted-foreground">Technologies and tools I work with</p>
           </div>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {skills.map((skill, index) => (
               <motion.div
@@ -182,7 +167,6 @@ export default function About() {
                   <div className="p-2 bg-primary/10 rounded-lg text-primary">{skill.icon}</div>
                   <h4 className="font-semibold">{skill.category}</h4>
                 </div>
-
                 <div className="space-y-2">
                   {skill.items.map((item) => (
                     <div
@@ -197,8 +181,6 @@ export default function About() {
             ))}
           </div>
         </motion.div>
-
-        {/* Call to Action */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

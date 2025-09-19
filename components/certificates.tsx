@@ -1,3 +1,4 @@
+
 "use client"
 
 import { useState } from "react"
@@ -6,10 +7,26 @@ import { Award, Trophy, Star, Code, Users, Lightbulb, X, Calendar, MapPin, Exter
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 
+// Define the Certificate interface for TypeScript
+interface Certificate {
+  title: string;
+  organization: string;
+  description: string;
+  fullDescription: string;
+  icon: JSX.Element;
+  color: string;
+  year: string;
+  duration: string;
+  location: string;
+  skills: string[];
+  credentialId: string;
+  verificationUrl: string;
+}
+
 export default function Certificates() {
   const [showAllCertificates, setShowAllCertificates] = useState(false)
 
-  const certificates = [
+  const certificates: Certificate[] = [
     {
       title: "STEM Center Participation Certificate",
       organization: "Debre Berhan STEM Center",
@@ -23,7 +40,7 @@ export default function Certificates() {
       location: "Debre Berhan, Ethiopia",
       skills: ["Scientific Research", "Problem Solving", "Data Analysis", "Team Collaboration"],
       credentialId: "STEM-2023-001",
-      verificationUrl: "#",
+      verificationUrl: "https://grok.x.ai",
     },
     {
       title: "2nd Place Science Fair",
@@ -38,7 +55,7 @@ export default function Certificates() {
       location: "Regional Level, Ethiopia",
       skills: ["Research", "Innovation", "Presentation", "Scientific Method"],
       credentialId: "SCI-FAIR-2023-02",
-      verificationUrl: "#",
+      verificationUrl: "https://grok.x.ai",
     },
     {
       title: "ቡናስክሪፕት (BunaScript) Programming Language Certificate",
@@ -53,7 +70,7 @@ export default function Certificates() {
       location: "Ethiopia",
       skills: ["Programming Languages", "Compiler Design", "Cultural Technology", "Language Processing"],
       credentialId: "BUNA-SCRIPT-2023",
-      verificationUrl: "#",
+      verificationUrl: "https://grok.x.ai",
     },
     {
       title: "KTS Participation Certificate",
@@ -68,7 +85,7 @@ export default function Certificates() {
       location: "Ethiopia",
       skills: ["Knowledge Sharing", "Community Building", "Technology Development", "Mentoring"],
       credentialId: "KTS-PART-2023",
-      verificationUrl: "#",
+      verificationUrl: "https://grok.x.ai",
     },
     {
       title: "Advanced Web Development Certificate",
@@ -83,7 +100,7 @@ export default function Certificates() {
       location: "Online",
       skills: ["React", "Node.js", "Database Design", "API Development"],
       credentialId: "WEB-DEV-ADV-2023",
-      verificationUrl: "#",
+      verificationUrl: "https://grok.x.ai",
     },
     {
       title: "High Scorer in Grade 12",
@@ -98,7 +115,7 @@ export default function Certificates() {
       location: "Debre Berhan, Ethiopia",
       skills: ["Academic Excellence", "Mathematics", "Science", "Critical Thinking"],
       credentialId: "HMM-G12-2021",
-      verificationUrl: "#",
+      verificationUrl: "https://grok.x.ai",
     },
     {
       title: "Computer Training Certificate",
@@ -113,11 +130,16 @@ export default function Certificates() {
       location: "Debre Berhan, Ethiopia",
       skills: ["Digital Literacy", "Office Applications", "Basic Programming", "Computer Operations"],
       credentialId: "ESD-COMP-2022",
-      verificationUrl: "#",
+      verificationUrl: "https://www.google.com/search?sca_esv=b6b9cc2a75ab82a9&sxsrf=AE3TifNE9zBV0txyUS9inVKpicjuMR2R2Q:1754727813803&udm=2&fbs=AIIjpHxU7SXXniUZfeShr2fp4giZ1Y6MJ25_tmWITc7uy4KIeoJTKjrFjVxydQWqI2NcOhYPURIv2wPgv_w_sE_0Sc6QqqU7k8cSQndc5mTXCIWHa_uc-TjDJYRtLl-RKXlVOTL5mI-WiiglTJRFGvAEXXnfLCt0BkYsC0T-4-k-mSSl9LqZBVj0n-XtnANItk--Gvyv2TNedRXhVojzV4R3s6nqe8F-Yg&q=images&sa=X&ved=2ahUKEwiqsZPApv2OAxVXVqQEHV_iB3UQtKgLegQIFBAB&biw=1280&bih=551&dpr=1.5#vhid=kt9a95Fkz4GXzM&vssid=mosaic",
     },
   ]
 
   const featuredCertificates = certificates.slice(0, 4) // Show first 4 certificates in main view
+
+  const handleVerifyClick = (title: string, url: string) => {
+    alert(`Opening verification for ${title}`);
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
 
   return (
     <section id="certificates" className="py-20 px-4">
@@ -368,9 +390,25 @@ export default function Certificates() {
                           <div className="pt-2 border-t border-border/30">
                             <div className="flex items-center justify-between text-xs text-muted-foreground">
                               <span>ID: {cert.credentialId}</span>
-                              <Button variant="ghost" size="sm" className="h-6 px-2 text-xs">
-                                <ExternalLink className="w-3 h-3 mr-1" />
-                                Verify
+                              <Button
+                                variant="ghost"
+                                size="sm"
+                                className="h-6 px-2 text-xs"
+                                asChild
+                                aria-label={`Verify ${cert.title} certificate`}
+                              >
+                                <a
+                                  href={cert.verificationUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    handleVerifyClick(cert.title, cert.verificationUrl);
+                                  }}
+                                >
+                                  <ExternalLink className="w-3 h-3 mr-1" />
+                                  Verify
+                                </a>
                               </Button>
                             </div>
                           </div>
