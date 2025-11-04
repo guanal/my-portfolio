@@ -58,7 +58,7 @@ export default function About() {
             <div className="bg-card/50 backdrop-blur-sm border rounded-2xl p-8 shadow-lg">
               <div className="relative w-48 h-48 mx-auto mb-6">
                 <Image
-                  src="/images/yite.jpg"
+                  src="/images/profile.JPG"
                   alt="Yitages Desta"
                   fill
                   className="object-cover rounded-2xl"
