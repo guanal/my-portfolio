@@ -16,8 +16,8 @@ export default function Contact() {
     {
       icon: <MessageCircle className="w-6 h-6" />,
       label: "Telegram",
-      value: "@guanal",
-      href: "https://t.me/guanal",
+      value: "@yitages0",
+      href: "https://t.me/yitages0",
       color: "from-sky-500 to-blue-500",
     },
     {
