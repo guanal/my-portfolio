@@ -9,6 +9,7 @@ import {
   MapPin,
   Github,
   MessageCircle,
+  Camera,
   Code,
   Server,
   Database,
@@ -44,9 +45,22 @@ export default function Footer() {
       href: "mailto:yitagesudesta53@gmail.com",
     },
     { icon: <Phone className="w-4 h-4" />, label: "Phone", value: "+251982850264", href: "tel:+251982850264" },
-    { icon: <MapPin className="w-4 h-4" />, label: "Location", value: "Bahir Dar, Ethiopia", href: "#" },
+    { icon: <MapPin className="w-4 h-4" />, label: "Location", value: "Addiss Ababa, Ethiopia", href: "#" },
     { icon: <Github className="w-4 h-4" />, label: "GitHub", value: "@guanal", href: "https://github.com/guanal" },
-    { icon: <MessageCircle className="w-4 h-4" />, label: "Telegram", value: "@guanal", href: "https://t.me/guanal" },
+    { icon: <MessageCircle className="w-4 h-4" />, label: "Telegram", value: "@yitages0", href: "https://t.me/guanal" },
+    {
+  icon: <Camera className="w-4 h-4" />, // or Image icon
+  label: "STEM",
+  value: "Google Photos",
+  href: "https://photos.app.goo.gl/6QN496XuojtFp5w36",
+},
+{
+  icon: <Camera className="w-4 h-4" />, // or Image icon
+  label: "BD",
+  value: "Google Photos",
+  href: "https://photos.app.goo.gl/VpakaPYP14wxsGJk9",
+},
+
   ]
 
   return (
