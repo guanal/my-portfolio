@@ -71,7 +71,7 @@ export default function About() {
                 <div className="space-y-2 text-sm text-muted-foreground">
                   <div className="flex items-center justify-center gap-2">
                     <MapPin className="w-4 h-4" />
-                    <span>Bahir Dar, Ethiopia</span>
+                    <span>Addiss Ababa, Ethiopia</span>
                   </div>
                   <div className="flex items-center justify-center gap-2">
                     <Calendar className="w-4 h-4" />
